@@ -10,7 +10,9 @@ import doctorsay.izx.com.test.App;
 import doctorsay.izx.com.test.mvp.OnDoudianListDetailFinishedInterface;
 import doctorsay.izx.com.test.mvp.OnDoudianListFinishedInterface;
 import doctorsay.izx.com.test.mvp.model.DoudianModel;
+import doctorsay.izx.com.test.mvp.model.bean.ResultData;
 import doctorsay.izx.com.test.mvp.model.bean.StrictSelectionBean;
+import doctorsay.izx.com.test.mvp.model.bean.StrictSelectionBean2;
 import doctorsay.izx.com.test.utils.ConstantsUtils;
 import doctorsay.izx.com.test.utils.LogUtils;
 import doctorsay.izx.com.test.utils.okhttp.OkhttpUtils;
@@ -30,10 +32,10 @@ public class DoudianModelImpl implements DoudianModel {
         map.put("projectType", type);
         map.put("pageIndex", page);
         map.put("pageSize", ConstantsUtils.PAGE_INDEX);
-        OkhttpUtils.getInstance().post(url, map, new SimpleCallback<StrictSelectionBean>(App.getAppContext()) {
+        OkhttpUtils.getInstance().post(url, map, new SimpleCallback<ResultData<StrictSelectionBean2>>(App.getAppContext()) {
 
             @Override
-            public void onSuccess(Response response, final StrictSelectionBean results) {
+            public void onSuccess(Response response, final ResultData<StrictSelectionBean2> results) {
                 LogUtils.i(TAG, "请求成功" + page);
                 if (results.getResult() != null && results.getResult().getData() != null && results.getResult().getData().size() > 0) {
                     onDoudianListFinishedInterface.onSuccess(results.getResult().getData());
