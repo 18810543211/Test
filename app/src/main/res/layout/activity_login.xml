@@ -43,12 +43,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="get code" />
+
             <Button
                 android:id="@+id/btn_go_list"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="go list" />
+
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_go_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="go main" />
     </LinearLayout>
 
     <ProgressBar

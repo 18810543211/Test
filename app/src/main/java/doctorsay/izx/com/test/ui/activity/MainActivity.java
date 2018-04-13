@@ -1,9 +1,11 @@
 package doctorsay.izx.com.test.ui.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,6 +15,8 @@ import doctorsay.izx.com.test.R;
 public class MainActivity extends AppCompatActivity {
 
     private TextView tv_main_text;
+    private Button toLogin;
+    private Button aliWebview;
     private Bundle bundle;
 
     public static String USERNAME = "username";
@@ -27,6 +31,22 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         tv_main_text = findViewById(R.id.tv_main_text);
+        toLogin = findViewById(R.id.toLogin);
+        aliWebview = findViewById(R.id.aliWebview);
+        toLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent1);
+            }
+        });
+        aliWebview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this, AliWebviewActivity.class);
+                startActivity(intent1);
+            }
+        });
         bundle = getIntent().getExtras();
         if (bundle != null) {
             username = bundle.getString(USERNAME);

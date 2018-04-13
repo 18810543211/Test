@@ -17,5 +17,15 @@
         android:layout_height="wrap_content"
         android:onClick="onClick"
         android:text="@string/app_name" />
+    <Button
+        android:id="@+id/toLogin"
+        android:text="跳转login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/aliWebview"
+        android:text="阿里webview测试"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

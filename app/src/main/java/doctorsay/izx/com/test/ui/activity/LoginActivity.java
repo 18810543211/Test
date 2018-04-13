@@ -28,6 +28,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView, View.
     private Button btn_login;
     private Button btn_getcode;
     private Button btn_go_list;
+    private Button btn_go_main;
     private ProgressBar progressBar;
     private LoginPresenter loginPresenter;
 
@@ -44,10 +45,12 @@ public class LoginActivity extends AppCompatActivity implements LoginView, View.
         btn_login = findViewById(R.id.btn_login);
         btn_getcode = findViewById(R.id.btn_getcode);
         btn_go_list = findViewById(R.id.btn_go_list);
+        btn_go_main = findViewById(R.id.btn_go_main);
         progressBar = findViewById(R.id.progressBar);
         btn_login.setOnClickListener(this);
         btn_getcode.setOnClickListener(this);
         btn_go_list.setOnClickListener(this);
+        btn_go_main.setOnClickListener(this);
         loginPresenter = new LoginPresenterImpl(this);
     }
 
@@ -106,6 +109,10 @@ public class LoginActivity extends AppCompatActivity implements LoginView, View.
             case R.id.btn_go_list:
                 Intent intent = new Intent(LoginActivity.this, DoudianListAct.class);
                 startActivity(intent);
+                break;
+            case R.id.btn_go_main:
+                Intent intent1 = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent1);
                 break;
         }
     }

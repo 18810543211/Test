@@ -48,11 +48,10 @@ public class LoadingMoreFooter extends LinearLayout {
 
         addView(progressCon);
         mText = new TextView(context);
-//        mText.setText("正在加载...");
+        mText.setText("正在加载...");
         mText.setTextColor(context.getResources().getColor(R.color.black));
         LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         layoutParams.setMargins((int) getResources().getDimension(R.dimen.dimen_10dp), 0, 0, 0);
-
         mText.setLayoutParams(layoutParams);
         addView(mText);
     }
@@ -62,17 +61,17 @@ public class LoadingMoreFooter extends LinearLayout {
             // 刷新中
             case STATE_LAODING:
                 progressCon.setVisibility(View.VISIBLE);
-//                mText.setText(ConstantString.listview_loading);
+                mText.setText("正在加载...");
                 this.setVisibility(View.VISIBLE);
                 break;
             // 刷新完成
             case STATE_COMPLETE:
-//                mText.setText(ConstantString.listview_loading);
-                this.setVisibility(View.GONE);
+                mText.setText("正在加载...");
+                this.setVisibility(View.VISIBLE);
                 break;
             // 没有更多数据
             case STATE_NOMORE:
-//                mText.setText(ConstantString.nomore_loading);
+                mText.setText("没有更多数据了");
                 progressCon.setVisibility(View.GONE);
                 this.setVisibility(View.VISIBLE);
                 break;
