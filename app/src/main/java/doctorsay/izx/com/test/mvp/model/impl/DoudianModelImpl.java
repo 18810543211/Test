@@ -31,7 +31,7 @@ public class DoudianModelImpl implements DoudianModel {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("projectType", type);
         map.put("pageIndex", page);
-        map.put("pageSize", ConstantsUtils.PAGE_INDEX);
+        map.put("pageSize", 20);
         OkhttpUtils.getInstance().post(url, map, new SimpleCallback<ResultData<StrictSelectionBean2>>(App.getAppContext()) {
 
             @Override

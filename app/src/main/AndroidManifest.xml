@@ -29,7 +29,9 @@
         <activity android:name=".ui.activity.LoginActivity" />
         <activity android:name=".ui.activity.AliWebviewActivity" />
         <activity android:name=".ui.activity.DoudianListAct" />
+        <activity android:name=".ui.activity.NewListActivity" />
         <activity android:name=".ui.activity.DoudianDetailAct" />
+        <activity android:name=".ui.activity.TestNestedScrollActivity" />
     </application>
 
 </manifest>

@@ -84,7 +84,7 @@ public class ZRecyclerView extends FrameLayout {
         mContext = context;
         View view = LayoutInflater.from(context).inflate(resId > 0 ? resId : R.layout.gui_zrecyclerview_zrecycler, null);
         mSwipeRefreshLayout = view.findViewById(R.id.swipeRefreshLayout);
-        mSwipeRefreshLayout.setColorSchemeResources(android.R.color.holo_green_dark, android.R.color.holo_blue_dark, android.R.color.holo_orange_dark);
+        mSwipeRefreshLayout.setColorSchemeResources(android.R.color.holo_red_dark);
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayoutOnRefresh(this));
 
         mRecyclerView = view.findViewById(R.id.recycler_view);

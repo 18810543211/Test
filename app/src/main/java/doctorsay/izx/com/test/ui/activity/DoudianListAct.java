@@ -10,6 +10,9 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
+import com.cjj.MaterialRefreshLayout;
+import com.cjj.MaterialRefreshListener;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,18 +25,20 @@ import doctorsay.izx.com.test.mvp.view.DoudianListView;
 import doctorsay.izx.com.test.ui.adapter.DoudianListAdapter;
 import doctorsay.izx.com.test.utils.ConstantsUtils;
 import doctorsay.izx.com.test.utils.LogUtils;
+import doctorsay.izx.com.test.utils.MySwiperefreshlayout;
+import doctorsay.izx.com.test.utils.PullRefreshLayout;
 import doctorsay.izx.com.test.utils.recyclerview.XRecylcerView;
 
 /**
  * Created by sujie on 2018/1/19.
  */
 
-public class DoudianListAct extends AppCompatActivity implements DoudianListView, SwipeRefreshLayout.OnRefreshListener, XRecylcerView.LoadingListener {
+public class DoudianListAct extends AppCompatActivity implements DoudianListView, PullRefreshLayout.OnRefreshListener,/*SwipeRefreshLayout.OnRefreshListener,*/ XRecylcerView.LoadingListener {
 
     private static final String TAG = "DoudianListAct";
 
     private DoudianListPresenter doudianListPresenter;
-    private SwipeRefreshLayout swipeRefreshLayout;
+    private PullRefreshLayout swipeRefreshLayout;
     private XRecylcerView xRecylcerView;
     private DoudianListAdapter doudianListAdapter;
     private List<StrictSelectionBean.PageStarResult> mData;
@@ -50,7 +55,15 @@ public class DoudianListAct extends AppCompatActivity implements DoudianListView
 
     private void initView() {
         swipeRefreshLayout = findViewById(R.id.mSwipeRefreshLayout);
-        swipeRefreshLayout.setColorSchemeResources(R.color.black);
+//        swipeRefreshLayout.setColorSchemeResources(R.color.black);
+//        swipeRefreshLayout.setOnRefreshListener(this);
+//        swipeRefreshLayout.setMaterialRefreshListener(new MaterialRefreshListener() {
+//            @Override
+//            public void onRefresh(MaterialRefreshLayout materialRefreshLayout) {
+//                // 刷新
+//                onRefresh2();
+//            }
+//        });
         swipeRefreshLayout.setOnRefreshListener(this);
         xRecylcerView = findViewById(R.id.mXRecylcerView);
         xRecylcerView.setHasFixedSize(true);
@@ -73,14 +86,30 @@ public class DoudianListAct extends AppCompatActivity implements DoudianListView
         onRefresh();
     }
 
+    void onRefresh2() {
+        pageIndex = 0;
+        doudianListPresenter.loadFinsh(type, pageIndex);
+
+    }
+
     @Override
     public void showProgressBar() {
-        swipeRefreshLayout.setRefreshing(true);
+        swipeRefreshLayout.setLoading(false);
+//        swipeRefreshLayout.setRefreshing(true);
+//        if (swipeRefreshLayout != null) {
+//            // 自动刷新...
+//            swipeRefreshLayout.autoRefresh();
+//        }
     }
 
     @Override
     public void hideProgressBar() {
         swipeRefreshLayout.setRefreshing(false);
+        swipeRefreshLayout.setLoading(false);
+//        if (swipeRefreshLayout != null) {
+//            // 结束下拉刷新...
+//            swipeRefreshLayout.finishRefresh();
+//        }
     }
 
     @Override
@@ -102,12 +131,12 @@ public class DoudianListAct extends AppCompatActivity implements DoudianListView
         }
     }
 
-    @Override
-    public void onRefresh() {
-        LogUtils.i(TAG, "刷新咯。。。。");
-        pageIndex = 0;
-        doudianListPresenter.loadFinsh(type, pageIndex);
-    }
+//    @Override
+//    public void onRefresh() {
+//        LogUtils.i(TAG, "刷新咯。。。。");
+//        pageIndex = 0;
+//        doudianListPresenter.loadFinsh(type, pageIndex);
+//    }
 
     @Override
     public void onLoadMore() {
@@ -115,5 +144,20 @@ public class DoudianListAct extends AppCompatActivity implements DoudianListView
         pageIndex++;
         doudianListPresenter.loadFinsh(type, pageIndex);
         xRecylcerView.loadMoreComplete();
+    }
+
+    @Override
+    public void onRefresh() {
+        LogUtils.i(TAG, "刷新咯。。。。");
+        pageIndex = 0;
+        // 判断当前是否处于上拉加载状态
+        if (!xRecylcerView.isLoadData()) {
+            // 设置当前刷新数，当下拉刷新的时候置为0，上拉加载时已经初始化
+            xRecylcerView.setPreviousTotal(0);
+            // 设置是否还有更多
+            xRecylcerView.setIsnomore(false);
+
+            doudianListPresenter.loadFinsh(type, pageIndex);
+        }
     }
 }

@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView tv_main_text;
     private Button toLogin;
     private Button aliWebview;
+    private Button startNestedScroll;
     private Bundle bundle;
 
     public static String USERNAME = "username";
@@ -33,19 +34,18 @@ public class MainActivity extends AppCompatActivity {
         tv_main_text = findViewById(R.id.tv_main_text);
         toLogin = findViewById(R.id.toLogin);
         aliWebview = findViewById(R.id.aliWebview);
-        toLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent1 = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent1);
-            }
+        startNestedScroll = findViewById(R.id.startNestedScroll);
+        toLogin.setOnClickListener(view -> {
+            Intent intent1 = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent1);
         });
-        aliWebview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent1 = new Intent(MainActivity.this, AliWebviewActivity.class);
-                startActivity(intent1);
-            }
+        aliWebview.setOnClickListener(view -> {
+            Intent intent1 = new Intent(MainActivity.this, AliWebviewActivity.class);
+            startActivity(intent1);
+        });
+        startNestedScroll.setOnClickListener(view -> {
+            Intent intent1 = new Intent(MainActivity.this, TestNestedScrollActivity.class);
+            startActivity(intent1);
         });
         bundle = getIntent().getExtras();
         if (bundle != null) {
