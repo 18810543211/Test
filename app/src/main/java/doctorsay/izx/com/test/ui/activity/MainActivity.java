@@ -9,8 +9,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+
 import doctorsay.izx.com.test.App;
 import doctorsay.izx.com.test.R;
+import doctorsay.izx.com.test.utils.MyARouterUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private Button toLogin;
     private Button aliWebview;
     private Button startNestedScroll;
+    private Button startScollview;
+    private Button startWaterfallDemo;
     private Bundle bundle;
 
     public static String USERNAME = "username";
@@ -35,9 +40,12 @@ public class MainActivity extends AppCompatActivity {
         toLogin = findViewById(R.id.toLogin);
         aliWebview = findViewById(R.id.aliWebview);
         startNestedScroll = findViewById(R.id.startNestedScroll);
+        startScollview = findViewById(R.id.startScollview);
+        startWaterfallDemo = findViewById(R.id.startWaterfallDemo);
         toLogin.setOnClickListener(view -> {
-            Intent intent1 = new Intent(MainActivity.this, LoginActivity.class);
-            startActivity(intent1);
+//            Intent intent1 = new Intent(MainActivity.this, LoginActivity.class);
+//            startActivity(intent1);
+            ARouter.getInstance().build(MyARouterUtils.LoginActivity).withString("username", "sujie").withString("userpwd", "123").navigation();
         });
         aliWebview.setOnClickListener(view -> {
             Intent intent1 = new Intent(MainActivity.this, AliWebviewActivity.class);
@@ -45,6 +53,14 @@ public class MainActivity extends AppCompatActivity {
         });
         startNestedScroll.setOnClickListener(view -> {
             Intent intent1 = new Intent(MainActivity.this, TestNestedScrollActivity.class);
+            startActivity(intent1);
+        });
+        startScollview.setOnClickListener(view -> {
+            Intent intent1 = new Intent(MainActivity.this, ScrollviewTestActivity.class);
+            startActivity(intent1);
+        });
+        startWaterfallDemo.setOnClickListener(v -> {
+            Intent intent1 = new Intent(MainActivity.this, WaterfallDemoActivity.class);
             startActivity(intent1);
         });
         bundle = getIntent().getExtras();

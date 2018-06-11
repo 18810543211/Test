@@ -10,17 +10,20 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+
 import doctorsay.izx.com.test.R;
 import doctorsay.izx.com.test.mvp.model.bean.LoginBean;
 import doctorsay.izx.com.test.mvp.presenter.LoginPresenter;
 import doctorsay.izx.com.test.mvp.presenter.impl.LoginPresenterImpl;
 import doctorsay.izx.com.test.mvp.view.LoginView;
+import doctorsay.izx.com.test.utils.MyARouterUtils;
 
 /**
  * 登陆页面
  * Created by sujie on 2018/1/17.
  */
-
+@Route(path = MyARouterUtils.LoginActivity)
 public class LoginActivity extends AppCompatActivity implements LoginView, View.OnClickListener {
 
     private EditText et_username;
@@ -52,6 +55,11 @@ public class LoginActivity extends AppCompatActivity implements LoginView, View.
         btn_go_list.setOnClickListener(this);
         btn_go_main.setOnClickListener(this);
         loginPresenter = new LoginPresenterImpl(this);
+
+        String username = getIntent().getStringExtra("username");
+        String userpwd = getIntent().getStringExtra("userpwd");
+        et_username.setText(username);
+        et_password.setText(userpwd);
     }
 
     @Override

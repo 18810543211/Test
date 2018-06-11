@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <doctorsay.izx.com.test.view.MyScollview
+            android:id="@+id/msvTest"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <!-- 2 -->
+                <LinearLayout
+                    android:id="@+id/llTest2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/dimen_10dp">
+                    <!-- 1 -->
+                    <LinearLayout
+                        android:id="@+id/llTest1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_400dp"
+                        android:layout_marginBottom="@dimen/dimen_10dp"
+                        android:background="#ff0000"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                    <!-- 1 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_200dp"
+                        android:background="#00ff00"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- 3 -->
+                <LinearLayout
+                    android:id="@+id/llTest3"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_540dp"
+                    android:layout_marginBottom="@dimen/dimen_30dp"
+                    android:background="#0000ff"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </doctorsay.izx.com.test.view.MyScollview>
+
+        <RelativeLayout
+            android:id="@+id/rlTest"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_100dp"
+            android:background="#ccffffff"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="@dimen/dimen_40dp"
+                android:layout_height="@dimen/dimen_40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:src="@mipmap/ic_launcher" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_40dp"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbTestBaby"
+                    style="@style/ScollRbt"
+                    android:checked="true"
+                    android:text="宝贝" />
+
+                <RadioButton
+                    android:id="@+id/rbTestDetail"
+                    style="@style/ScollRbt"
+                    android:text="详情" />
+
+                <RadioButton
+                    android:id="@+id/rbTestRecommend"
+                    style="@style/ScollRbt"
+                    android:text="推荐" />
+            </RadioGroup>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

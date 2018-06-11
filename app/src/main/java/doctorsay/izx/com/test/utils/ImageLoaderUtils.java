@@ -45,7 +45,6 @@ public class ImageLoaderUtils {
         Glide.with(mContext).load(url.replace("https://", "http://"))
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .centerCrop()
-                .placeholder(R.drawable.ic_image_loading)
                 .error(R.drawable.ic_empty_picture)
                 .crossFade().into(imageView);
     }

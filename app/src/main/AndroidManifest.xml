@@ -32,6 +32,8 @@
         <activity android:name=".ui.activity.NewListActivity" />
         <activity android:name=".ui.activity.DoudianDetailAct" />
         <activity android:name=".ui.activity.TestNestedScrollActivity" />
+        <activity android:name=".ui.activity.ScrollviewTestActivity" />
+        <activity android:name=".ui.activity.WaterfallDemoActivity" />
     </application>
 
 </manifest>
