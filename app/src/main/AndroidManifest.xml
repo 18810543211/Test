@@ -26,6 +26,9 @@
             </intent-filter>
         </activity>
         <!--<activity android:name=".ui.activity.MainActivity" />-->
+        <!--<activity android:name=".ui.activity.MainActivity" />-->
+        <!--<activity android:name=".ui.activity.MainActivity" />-->
+        <!--<activity android:name=".ui.activity.MainActivity" />-->
         <activity android:name=".ui.activity.LoginActivity" />
         <activity android:name=".ui.activity.AliWebviewActivity" />
         <activity android:name=".ui.activity.DoudianListAct" />

@@ -1,15 +1,13 @@
 package doctorsay.izx.com.test.ui.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.webkit.JavascriptInterface;
 
 import org.json.JSONObject;
 
 import doctorsay.izx.com.test.R;
-import doctorsay.izx.com.test.utils.LogUtils;
-import doctorsay.izx.com.test.utils.okhttp.AjaxHandler;
 import wendu.dsbridge.CompletionHandler;
 import wendu.dsbridge.DWebView;
 

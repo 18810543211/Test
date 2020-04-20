@@ -2,16 +2,11 @@ package doctorsay.izx.com.test.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.support.annotation.Nullable;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.view.View;
 
-import com.cjj.MaterialRefreshLayout;
-import com.cjj.MaterialRefreshListener;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,9 +18,7 @@ import doctorsay.izx.com.test.mvp.presenter.DoudianListPresenter;
 import doctorsay.izx.com.test.mvp.presenter.impl.DoudianListPresenterImpl;
 import doctorsay.izx.com.test.mvp.view.DoudianListView;
 import doctorsay.izx.com.test.ui.adapter.DoudianListAdapter;
-import doctorsay.izx.com.test.utils.ConstantsUtils;
 import doctorsay.izx.com.test.utils.LogUtils;
-import doctorsay.izx.com.test.utils.MySwiperefreshlayout;
 import doctorsay.izx.com.test.utils.PullRefreshLayout;
 import doctorsay.izx.com.test.utils.recyclerview.XRecylcerView;
 

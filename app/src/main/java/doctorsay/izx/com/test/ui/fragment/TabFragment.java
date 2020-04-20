@@ -1,11 +1,9 @@
 package doctorsay.izx.com.test.ui.fragment;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,10 +17,7 @@ import doctorsay.izx.com.test.mvp.model.bean.StrictSelectionBean;
 import doctorsay.izx.com.test.mvp.presenter.DoudianListPresenter;
 import doctorsay.izx.com.test.mvp.presenter.impl.DoudianListPresenterImpl;
 import doctorsay.izx.com.test.mvp.view.DoudianListView;
-import doctorsay.izx.com.test.ui.activity.DoudianDetailAct;
-import doctorsay.izx.com.test.ui.activity.DoudianListAct;
 import doctorsay.izx.com.test.ui.adapter.DoudianListAdapter;
-import doctorsay.izx.com.test.utils.LogUtils;
 import doctorsay.izx.com.test.utils.recyclerview.XRecylcerView;
 
 /**

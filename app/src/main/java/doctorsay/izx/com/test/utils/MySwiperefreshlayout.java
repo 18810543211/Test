@@ -2,9 +2,8 @@ package doctorsay.izx.com.test.utils;
 
 import android.content.Context;
 import android.graphics.Rect;
-import android.support.v4.widget.SwipeRefreshLayout;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.TranslateAnimation;

@@ -1,9 +1,11 @@
 package doctorsay.izx.com.test.ui.activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.AbsoluteSizeSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,6 +20,7 @@ import doctorsay.izx.com.test.utils.MyARouterUtils;
 public class MainActivity extends AppCompatActivity {
 
     private TextView tv_main_text;
+    private TextView tvText;
     private Button toLogin;
     private Button aliWebview;
     private Button startNestedScroll;
@@ -37,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         tv_main_text = findViewById(R.id.tv_main_text);
+        tvText = findViewById(R.id.tvText);
         toLogin = findViewById(R.id.toLogin);
         aliWebview = findViewById(R.id.aliWebview);
         startNestedScroll = findViewById(R.id.startNestedScroll);
@@ -69,6 +73,11 @@ public class MainActivity extends AppCompatActivity {
         }
         tv_main_text.setText("欢迎" + username);
 
+
+        Spannable string = new SpannableString("¥2234.98");
+//        string.length()
+        string.setSpan(new AbsoluteSizeSpan(60), 1, string.length() - 2, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        tvText.setText(string);
     }
 
     public void onClick(View view) {

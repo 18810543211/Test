@@ -3,10 +3,10 @@ package doctorsay.izx.com.test.view;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
-import android.support.v4.view.NestedScrollingParent;
-import android.support.v4.view.ViewCompat;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.RecyclerView;
+import androidx.core.view.NestedScrollingParent;
+import androidx.core.view.ViewCompat;
+import androidx.viewpager.widget.ViewPager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.VelocityTracker;
@@ -16,8 +16,6 @@ import android.view.ViewGroup;
 import android.view.animation.Interpolator;
 import android.widget.LinearLayout;
 import android.widget.OverScroller;
-
-import doctorsay.izx.com.test.R;
 
 
 public class StickyNavLayout extends LinearLayout implements NestedScrollingParent {

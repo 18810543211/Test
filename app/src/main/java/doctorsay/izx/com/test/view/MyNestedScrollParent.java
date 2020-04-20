@@ -2,14 +2,11 @@ package doctorsay.izx.com.test.view;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.support.v4.view.NestedScrollingParent;
-import android.support.v4.view.NestedScrollingParentHelper;
+import androidx.core.view.NestedScrollingParent;
+import androidx.core.view.NestedScrollingParentHelper;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.ViewTreeObserver;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 /**
  * Created by wangjitao on 2017/2/14 0014.
