@@ -19,8 +19,17 @@ android {
         }
     }
     buildTypes {
+        debug {
+            debuggable true//调试
+            minifyEnabled false//混淆
+            zipAlignEnabled true//压缩
+            crunchPngs false//关闭png优化，以加快构建速度
+        }
         release {
-            minifyEnabled false
+            debuggable false//调试
+            minifyEnabled true//混淆
+            zipAlignEnabled true//压缩
+            crunchPngs true//png优化
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

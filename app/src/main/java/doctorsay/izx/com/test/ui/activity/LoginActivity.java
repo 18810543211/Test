@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView, View.
         btn_go_list.setOnClickListener(this);
         btn_go_main.setOnClickListener(this);
         loginPresenter = new LoginPresenterImpl(this);
-
+        getLifecycle().addObserver(loginPresenter);
         String username = getIntent().getStringExtra("username");
         String userpwd = getIntent().getStringExtra("userpwd");
         et_username.setText(username);
@@ -99,11 +99,6 @@ public class LoginActivity extends AppCompatActivity implements LoginView, View.
         }, 200);
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        loginPresenter.onDestroy();
-    }
 
     @Override
     public void onClick(View view) {
