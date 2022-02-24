@@ -5,8 +5,7 @@ import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import androidx.palette.graphics.Palette;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.appcompat.widget.Toolbar;
-import android.text.TextUtils;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +14,6 @@ import android.widget.ImageView;
 import java.util.List;
 
 import doctorsay.izx.com.test.R;
-import doctorsay.izx.com.test.utils.ImageLoaderUtils;
 
 /**
  * Created by sujie on 2018/6/7.
@@ -43,9 +41,9 @@ public class WaterfallDemoAdapter extends RecyclerView.Adapter<RecyclerView.View
             if (result == null) {
                 return;
             }
-            if (!TextUtils.isEmpty(result)) {
-                ImageLoaderUtils.display(((ItemViewHolder) holder).ivWaterfall.getContext(), ((ItemViewHolder) holder).ivWaterfall, result);
-            }
+//            if (!TextUtils.isEmpty(result)) {
+//                ImageLoaderUtils.display(((ItemViewHolder) holder).ivWaterfall.getContext(), ((ItemViewHolder) holder).ivWaterfall, result);
+//            }
             ((ItemViewHolder) holder).ivWaterfall.setBackgroundColor(getColor(((ItemViewHolder) holder).ivWaterfall));
         }
     }

@@ -13,7 +13,6 @@ import java.util.List;
 
 import doctorsay.izx.com.test.R;
 import doctorsay.izx.com.test.mvp.model.bean.StrictSelectionBean;
-import doctorsay.izx.com.test.utils.ImageLoaderUtils;
 
 /**
  * Created by sujie on 2018/1/19.
@@ -52,9 +51,9 @@ public class DoudianListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             if (!TextUtils.isEmpty(result.getProjectName())) {
                 ((ItemViewHolder) holder).tv_item_doudianlist_title.setText(result.getProjectName());
             }
-            if (!TextUtils.isEmpty(result.getPreviewImageUrl())) {
-                ImageLoaderUtils.display(mContext, ((ItemViewHolder) holder).iv_item_doudianlist_image, result.getPreviewImageUrl());
-            }
+//            if (!TextUtils.isEmpty(result.getPreviewImageUrl())) {
+//                ImageLoaderUtils.display(mContext, ((ItemViewHolder) holder).iv_item_doudianlist_image, result.getPreviewImageUrl());
+//            }
         }
     }
 

@@ -8,10 +8,12 @@ import android.text.SpannableString;
 import android.text.style.AbsoluteSizeSpan;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.sj.imagelib.ImageLoader;
 
 import doctorsay.izx.com.test.App;
 import doctorsay.izx.com.test.R;
@@ -26,7 +28,9 @@ public class MainActivity extends AppCompatActivity {
     private Button startNestedScroll;
     private Button startScollview;
     private Button startWaterfallDemo;
+    private ImageView ivTextImage;
     private Bundle bundle;
+
 
     public static String USERNAME = "username";
     private String username;
@@ -39,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
+        ivTextImage = findViewById(R.id.iv_text_image);
         tv_main_text = findViewById(R.id.tv_main_text);
         tvText = findViewById(R.id.tvText);
         toLogin = findViewById(R.id.toLogin);
@@ -72,6 +77,19 @@ public class MainActivity extends AppCompatActivity {
             username = bundle.getString(USERNAME);
         }
         tv_main_text.setText("欢迎" + username);
+
+        String TEST_URL = "http://pijiang-image-1307318873.file.myqcloud.com/74e3dbc6e9c4432ab4ff6b28315e2981.png?imageMogr2/format/webp";
+        ImageLoader.show(
+                ImageLoader
+                        .Builder
+                        .withString(
+                                this,
+                                TEST_URL
+                        )
+                        .circle(true)
+                        .build(),
+                ivTextImage
+        );
 
 
         Spannable string = new SpannableString("¥2234.98");

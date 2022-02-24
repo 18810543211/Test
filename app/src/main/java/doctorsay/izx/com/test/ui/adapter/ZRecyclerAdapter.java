@@ -8,7 +8,6 @@ import com.zcolin.gui.zrecyclerview.BaseRecyclerAdapter;
 
 import doctorsay.izx.com.test.R;
 import doctorsay.izx.com.test.mvp.model.bean.StrictSelectionBean;
-import doctorsay.izx.com.test.utils.ImageLoaderUtils;
 
 /**
  * Created by sujie on 2018/4/13.
@@ -32,8 +31,8 @@ public class ZRecyclerAdapter extends BaseRecyclerAdapter<StrictSelectionBean.Pa
         if (!TextUtils.isEmpty(data.getProjectName())) {
             textView.setText(data.getProjectName());
         }
-        if (!TextUtils.isEmpty(data.getPreviewImageUrl())) {
-            ImageLoaderUtils.display(imageView.getContext(), imageView, data.getPreviewImageUrl());
-        }
+//        if (!TextUtils.isEmpty(data.getPreviewImageUrl())) {
+//            ImageLoaderUtils.display(imageView.getContext(), imageView, data.getPreviewImageUrl());
+//        }
     }
 }

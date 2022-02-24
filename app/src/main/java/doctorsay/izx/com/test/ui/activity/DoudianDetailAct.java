@@ -1,17 +1,9 @@
 package doctorsay.izx.com.test.ui.activity;
 
 import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Handler;
-import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-
-import java.util.HashMap;
+import androidx.appcompat.app.AppCompatActivity;
 
 import doctorsay.izx.com.test.R;
 import doctorsay.izx.com.test.mvp.presenter.DoudianDetailPresenter;
@@ -64,8 +56,6 @@ public class DoudianDetailAct extends AppCompatActivity implements DoudianDetail
 //            tv_detail_content.post()
 //            handler.sendEmptyMessage().postDelayed();
 //            startActivity();
-
-            Glide.with(this).load("").into(new ImageView(this));
 
         } catch (Exception ignored) {
 
